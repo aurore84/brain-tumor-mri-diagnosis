@@ -18,7 +18,7 @@ from pathlib import Path
 
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, models, transforms
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -76,11 +76,19 @@ def get_loaders(batch_size: int):
     ])
     train_ds = datasets.ImageFolder(DATA / "Training", transform=train_tf)
     test_ds = datasets.ImageFolder(DATA / "Testing", transform=test_tf)
+    if train_ds.classes != CLASSES or test_ds.classes != CLASSES:
+        raise ValueError(f"类别目录必须为 {CLASSES}，且训练集与测试集一致")
+    # 独立的数据集实例共享索引，验证集不使用训练时的随机增强。
+    val_base = datasets.ImageFolder(DATA / "Training", transform=test_tf)
+    # 保留原有 seed=42 的划分，以便与已有实验对照。
     # 从训练集划 10% 做验证集
     val_size = int(0.1 * len(train_ds))
-    train_ds, val_ds = torch.utils.data.random_split(
+    if val_size == 0 or val_size == len(train_ds):
+        raise ValueError("训练图像不足，无法划分非空训练集和验证集")
+    train_ds, val_indices = torch.utils.data.random_split(
         train_ds, [len(train_ds) - val_size, val_size],
         generator=torch.Generator().manual_seed(42))
+    val_ds = Subset(val_base, val_indices.indices)
     train_ld = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=0)
     val_ld = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=0)
     test_ld = DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=0)

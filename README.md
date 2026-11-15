@@ -41,6 +41,18 @@ Windows 用户可直接双击 `启动演示.bat` 启动演示系统。
 
 ## 复现实验
 
+训练集按固定种子 42 划出 10% 作为验证集。训练使用随机增强，验证与测试使用固定预处理。该划分按图像进行，**不能据此认定患者独立**；若取得患者标识，应改为按患者分组划分。修正验证预处理后需重新运行实验，本文已有结果仍属于原实验记录。
+
+训练前可进行只读的数据审计：
+
+```bash
+python src/audit_data.py data/Training data/Testing > /tmp/mri-data-audit.json
+# 下载外部数据后，也可将 data_external 作为第三个目录加入检查
+python -m unittest discover -s tests -v
+```
+
+审计比较解码并校正 EXIF 方向后的 RGB 像素，报告目录内重复和跨目录重复；发现跨目录重复时退出码为 1。它不会删除或移动图片，也不检查近似重复、患者身份或来源独立性。发现重复后应先核实来源，再确定分组或去重规则，不能直接宣称数据无泄漏。
+
 ```bash
 python src/evaluate.py --ckpt models/resnet18_finetune.pth     # 内部评估（混淆矩阵/报告/曲线）
 python src/external_eval.py --ckpt models/resnet18_finetune.pth # 外部验证
