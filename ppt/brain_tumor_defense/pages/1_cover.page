@@ -24,8 +24,8 @@ elements:
       fontFamily: MiSans
       lineHeight: 1.35
       text: |
-        <p>Grad-CAM 注意力可视化：模型的"注视"</p>
-        <p>与人眼一样聚焦在肿瘤病灶区域</p>
+        <p>Grad-CAM 注意力可视化：模型的高响应区域</p>
+        <p>落在病灶样区域附近（定性类比）</p>
   # 左侧标题区
   - elementId: cover-kicker
     elementType: text
@@ -70,7 +70,7 @@ elements:
       fontFamily: MiSans
       lineHeight: 1.6
       text: |
-        <p>测试集准确率 <span style="color:$primary"><strong>93.9%</strong></span>（1600 张）· 四分类：胶质瘤 / 脑膜瘤 / 垂体瘤 / 无肿瘤</p>
+        <p>内部测试 <span style="color:$primary"><strong>94.1%</strong></span>（ResNet18，1600 张）· Hopfield 记忆头 <span style="color:$primary"><strong>94.0%</strong></span>（5 种子）· 四分类</p>
         <p>两阶段迁移学习 + Hopfield 联想记忆 + Grad-CAM 视觉注意分析 + 可现场演示的 Web 系统</p>
   - elementId: cover-meta
     elementType: text

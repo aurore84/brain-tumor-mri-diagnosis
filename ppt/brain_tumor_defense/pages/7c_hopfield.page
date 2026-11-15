@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "08"
+      text: "06"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 760, 30]
@@ -56,7 +56,7 @@ elements:
       lineHeight: 1.45
       text: |
         <p><span style="color:$primary"><strong>理论链接</strong></span>：现代 Hopfield 的 softmax 检索更新规则，与注意力机制在数学上<strong>等价</strong>（Ramsauer et al., 2020）——</p>
-        <p style="margin-top:4px">联想记忆与注意力是同一枚硬币的两面，本项目的"记忆"与"注意"两条认知线索在此汇合。</p>
+        <p style="margin-top:4px">联想记忆与注意力是同一枚硬币的两面。注意：此处的"注意力"指检索的数学形式，与 Grad-CAM 的梯度归因是两种不同概念，报告与讲稿中均已区分。</p>
   # 右：公平对比结果表（5 种子）
   - elementId: hop-table
     elementType: table
@@ -71,22 +71,22 @@ elements:
         - text: "外部"
       - - text: "线性头"
         - text: "2k"
-        - text: "92.6±0.0%"
-        - text: "81.6%"
-      - - text: "原型记忆（零训练）"
+        - text: "93.3±0.1%"
+        - text: "83.1%"
+      - - text: "原型记忆（免梯度训练）"
         - text: "0"
-        - text: "92.1%"
-        - text: "79.7%"
+        - text: "92.6%"
+        - text: "81.1%"
       - - text: "MLP 头（参数对齐）"
         - text: "66k"
         - text: "93.9±0.0%"
-        - text: "83.3%"
+        - text: "84.1%"
       - - text: "Hopfield 记忆头"
           bold: true
         - text: "70k"
-        - text: "94.0±0.0%*"
+        - text: "94.0±0.1%"
           bold: true
-        - text: "83.4%"
+        - text: "82.2%"
           bold: true
   - elementId: hop-caption
     elementType: text
@@ -94,7 +94,7 @@ elements:
     content:
       style: "$small"
       fontSize: 9
-      text: 表 4　四种分类头公平对比：同一冻结骨干特征、同一训练预算、5 种子 mean±std（*Hopfield 剔除 1 个训练塌陷种子）
+      text: 表 4　四种分类头公平对比：同一冻结骨干特征、同一训练预算、5 种子 mean±std（2026-11-15 复验）
   - elementId: hop-findings
     elementType: text
     bounds: [500, 306, 400, 186]
@@ -102,9 +102,9 @@ elements:
       style: "$body"
       fontSize: 11.5
       text: |
-        <p><span style="color:$accent"><strong>① 零训练原型记忆 92.1%</strong></span>——只"记住每类长什么样"就接近线性头，说明特征空间类别聚类良好；</p>
-        <p style="margin-top:6px"><span style="color:$accent"><strong>② 提升来自哪里？</strong></span>McNemar 检验：记忆头在 4/5 种子上显著优于线性头（p&lt;0.01）；但与参数量对齐的 MLP 打平——0.9pp 的提升主要来自更大的参数化头，而非联想检索本身；</p>
-        <p style="margin-top:6px"><span style="color:$accent"><strong>③ 容量消融</strong></span>：每类 ≥8 条记忆后性能饱和且稳定；≤4 条时训练不稳（部分种子塌陷）——记忆式头需要足够容量才可靠。</p>
+        <p><span style="color:$accent"><strong>① 无需梯度训练的原型记忆即达 92.6%</strong></span>——固定已训练骨干，仅用类内均值做"记忆"就接近线性头，说明特征空间类别聚类良好；</p>
+        <p style="margin-top:6px"><span style="color:$accent"><strong>② 提升来自哪里？</strong></span>记忆头优势 5/5 种子方向一致（1/5 达显著，p=0.02）；但与参数量对齐的 MLP 打平——收益主要来自更大的参数化头，而非联想检索本身；</p>
+        <p style="margin-top:6px"><span style="color:$accent"><strong>③ 容量消融</strong></span>：每类 ≥2 条记忆即饱和稳定；仅 1 条时训练不稳（部分种子塌陷）——记忆式头需要多于一条记忆才可靠。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
@@ -119,4 +119,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "09"
+      text: "06"

@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "03"
+      text: "02"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -100,7 +100,7 @@ elements:
       style: "$small"
       fontSize: 9
       text: |
-        <p><strong>数据审计</strong>：训练/测试/外部三组间 MD5 精确重复 0 对；感知哈希疑似对经 16×16 哈希＋像素级复核均非真重复——排除跨组泄漏。</p>
+        <p><strong>数据审计</strong>：训练/测试/外部三组间 MD5 精确重复 0 对；感知哈希疑似对经 16×16 哈希＋像素级复核均非真重复——排除跨组泄漏。按图像划分，患者独立性无法验证（公开数据无患者标识）。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
@@ -115,4 +115,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "04"
+      text: "02"

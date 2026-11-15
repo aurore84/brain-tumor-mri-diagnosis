@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "05"
+      text: "备2"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -32,7 +32,7 @@ elements:
       color: "$primary"
       fontFamily: 思源宋体
       bold: true
-      text: 93.0%
+      text: 94.1%
   - elementId: big-acc-label
     elementType: text
     bounds: [62, 184, 340, 20]
@@ -48,8 +48,8 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p>阶段一（仅分类头）测试准确率 79.1%</p>
-        <p>阶段二（微调后）提升至 <strong>93.0%</strong>，+13.9 pp</p>
+        <p>阶段一（仅分类头）测试准确率 80.1%</p>
+        <p>阶段二（微调后）提升至 <strong>94.1%</strong>，+14.0 pp</p>
   # 左下：分类别指标表
   - elementId: metrics-table
     elementType: table
@@ -63,27 +63,27 @@ elements:
         - text: "召回率"
         - text: "F1"
       - - text: "胶质瘤"
-        - text: "0.994"
-        - text: "0.763"
-        - text: "0.863"
+        - text: "0.982"
+        - text: "0.820"
+        - text: "0.894"
       - - text: "脑膜瘤"
-        - text: "0.848"
-        - text: "0.963"
-        - text: "0.902"
+        - text: "0.878"
+        - text: "0.955"
+        - text: "0.915"
       - - text: "无肿瘤"
-        - text: "0.922"
-        - text: "1.000"
-        - text: "0.959"
+        - text: "0.934"
+        - text: "0.998"
+        - text: "0.965"
       - - text: "垂体瘤"
-        - text: "0.983"
-        - text: "0.995"
-        - text: "0.989"
+        - text: "0.980"
+        - text: "0.990"
+        - text: "0.985"
   - elementId: metrics-caption
     elementType: text
     bounds: [60, 478, 380, 16]
     content:
       style: "$small"
-      text: 表 2　各类别测试集指标（宏平均 F1 = 0.928）
+      text: 表 2　各类别测试集指标（宏平均 F1 = 0.940，2026-11-15 复验）
   # 右：训练曲线
   - elementId: curve-1
     elementType: image
@@ -108,7 +108,7 @@ elements:
     content:
       style: "$small"
       align: [center, top]
-      text: 图 3　阶段二：微调 layer4，验证准确率升至 97.1%
+      text: 图 3　阶段二：微调 layer4，验证准确率升至 96.1%
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
@@ -123,4 +123,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "06"
+      text: "11"

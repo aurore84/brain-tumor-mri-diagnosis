@@ -5,7 +5,7 @@
 ——把类别特征作为"记忆原型"存入 Hopfield 网络，推理即"联想检索"。
 
 两个实验：
-  --mode proto   零训练：冻结骨干特征 + 类别原型记忆 + Hopfield 检索
+  --mode proto   免梯度训练：冻结骨干特征 + 类别原型记忆 + Hopfield 检索
   --mode train   可训练：学习投影矩阵 + 可学习记忆模式，端到端训练记忆头
 
 理论链接：现代 Hopfield 更新规则（softmax 检索）与注意力机制在数学上等价
@@ -86,7 +86,7 @@ def evaluate(patterns, beta, feats, labels):
 
 
 def mode_proto(backbone, train_ld, test_ld, ext_ld, ext_remap):
-    print("\n=== 实验 A：零训练原型记忆头 ===")
+    print("\n=== 实验 A：免梯度原型记忆头 ===")
     Xtr, ytr = extract(backbone, train_ld)
     # 类别原型 = 类内均值再归一化（"记忆"存入）
     protos = torch.stack([F.normalize(Xtr[ytr == c].mean(0), dim=0) for c in range(4)])

@@ -3,60 +3,60 @@
     "backbone": "finetuned",
     "ratio": 0.01,
     "per_class": 14,
-    "fc_acc": 0.9200000166893005,
-    "hopfield_acc": 0.9162499904632568
+    "fc_acc": 0.9300000071525574,
+    "hopfield_acc": 0.9325000047683716
   },
   {
     "backbone": "finetuned",
     "ratio": 0.05,
     "per_class": 70,
-    "fc_acc": 0.9206249713897705,
-    "hopfield_acc": 0.9131249785423279
+    "fc_acc": 0.9281250238418579,
+    "hopfield_acc": 0.9243749976158142
   },
   {
     "backbone": "finetuned",
     "ratio": 0.1,
     "per_class": 140,
-    "fc_acc": 0.921875,
-    "hopfield_acc": 0.9181249737739563
+    "fc_acc": 0.9281250238418579,
+    "hopfield_acc": 0.9237499833106995
   },
   {
     "backbone": "finetuned",
     "ratio": 0.25,
     "per_class": 350,
-    "fc_acc": 0.9256250262260437,
-    "hopfield_acc": 0.9200000166893005
+    "fc_acc": 0.9287499785423279,
+    "hopfield_acc": 0.925000011920929
   },
   {
     "backbone": "finetuned",
     "ratio": 1.0,
     "per_class": 1400,
-    "fc_acc": 0.9237499833106995,
-    "hopfield_acc": 0.9212499856948853
+    "fc_acc": 0.9337499737739563,
+    "hopfield_acc": 0.9287499785423279
   },
   {
     "backbone": "pretrained",
     "ratio": 0.01,
     "per_class": 14,
-    "fc_acc": 0.715624988079071
+    "fc_acc": 0.7131249904632568
   },
   {
     "backbone": "pretrained",
     "ratio": 0.05,
     "per_class": 70,
-    "fc_acc": 0.7425000071525574
+    "fc_acc": 0.7450000047683716
   },
   {
     "backbone": "pretrained",
     "ratio": 0.1,
     "per_class": 140,
-    "fc_acc": 0.7381250262260437
+    "fc_acc": 0.7406250238418579
   },
   {
     "backbone": "pretrained",
     "ratio": 0.25,
     "per_class": 350,
-    "fc_acc": 0.7599999904632568
+    "fc_acc": 0.7543749809265137
   },
   {
     "backbone": "pretrained",
@@ -68,30 +68,30 @@
     "backbone": "random",
     "ratio": 0.01,
     "per_class": 14,
-    "fc_acc": 0.5681250095367432
+    "fc_acc": 0.5562499761581421
   },
   {
     "backbone": "random",
     "ratio": 0.05,
     "per_class": 70,
-    "fc_acc": 0.5681250095367432
+    "fc_acc": 0.5493749976158142
   },
   {
     "backbone": "random",
     "ratio": 0.1,
     "per_class": 140,
-    "fc_acc": 0.5662500262260437
+    "fc_acc": 0.5575000047683716
   },
   {
     "backbone": "random",
     "ratio": 0.25,
     "per_class": 350,
-    "fc_acc": 0.5631250143051147
+    "fc_acc": 0.5475000143051147
   },
   {
     "backbone": "random",
     "ratio": 1.0,
     "per_class": 1400,
-    "fc_acc": 0.5693749785423279
+    "fc_acc": 0.5525000095367432
   }
 ]

@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "12"
+      text: "09"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -39,7 +39,7 @@ elements:
       text: |
         <p>① <strong>认知机制进入方法本身</strong>：以现代 Hopfield 联想记忆替换判别式分类头，并用参数对齐对照与容量消融诚实回答"提升从何而来"。</p>
         <p style="margin-top:5px">② <strong>对照实验回答认知问题</strong>：外部验证刻画领域偏移、小样本曲线分解"视觉经验"的贡献、Grad-CAM 人机注意类比。</p>
-        <p style="margin-top:5px">③ <strong>资源约束下的两阶段训练策略</strong>：无 GPU 条件下 79.1% → 93.0%，完整可演示闭环。</p>
+        <p style="margin-top:5px">③ <strong>资源约束下的两阶段训练策略</strong>：无 GPU 条件下 80.1% → 94.1%，完整可演示闭环。</p>
   - elementId: innov-line
     elementType: shape
     bounds: [60, 238, 500, 1]
@@ -82,7 +82,7 @@ elements:
       lineHeight: 1.5
       text: |
         <p><span style="font-size:24px; color:$primary"><strong>94.0%</strong></span> 测试准确率（记忆头）</p>
-        <p><span style="font-size:24px; color:$primary"><strong>100%</strong></span> 无肿瘤召回</p>
+        <p><span style="font-size:24px; color:$primary"><strong>97.7%</strong></span> 肿瘤敏感度（内部）</p>
         <p><span style="font-size:24px; color:$primary"><strong>4</strong></span> 类脑肿瘤影像鉴别</p>
   # 右下：局限与展望
   - elementId: future-bar
@@ -103,8 +103,8 @@ elements:
       style: "$body"
       fontSize: 11
       text: |
-        <p>· 外部 81.7%：下降集中于胶质瘤（召回 57.5%），多序列输入是改进方向</p>
-        <p style="margin-top:4px">· 记忆头小容量下训练不稳（约 1/5 种子塌陷）</p>
+        <p>· 外部 84.6%：下降集中于胶质瘤（召回 66.9%），多序列输入是改进方向</p>
+        <p style="margin-top:4px">· 记忆头仅 1 条/类时训练不稳，容量需 ≥2 条</p>
         <p style="margin-top:4px">· Grad-CAM 为定性类比，人机注意对比待眼动数据定量验证</p>
         <p style="margin-top:4px">· 展望：眼动实验 + 注视点-热区重叠率，延伸为真正的认知实验</p>
   # 结语
@@ -132,4 +132,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "13"
+      text: "09"

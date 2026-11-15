@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 ppt/overview.jpg
 ppt/brain_tumor_defense_screenshot/
+
+# Office 临时锁文件
+~$*

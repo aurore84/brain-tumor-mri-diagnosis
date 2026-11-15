@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "09"
+      text: "备3"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 760, 30]
@@ -50,7 +50,7 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>① "举一反三"来自经验</strong></span>：有任务视觉经验时，每类仅 14 张即达 92%——接近人类医生"数十例上手"的效率。</p>
+        <p><span style="color:$accent"><strong>① 样本效率主要来自表征</strong></span>：骨干已在完整训练集上微调，此后每类仅 14 张训练分类头即达 93%（固定表征下的少样本分类头实验，非"模型总共只见 14 张"）。</p>
   - elementId: fs-2
     elementType: text
     bounds: [580, 240, 320, 108]
@@ -58,7 +58,7 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>② 经验贡献可分解</strong></span>：通用视觉经验（预训练）+17 pp，任务适应（微调）再 +17 pp；去掉全部经验（随机初始化）只剩 57%——恰如人类"多年视觉经验 + 医学院专科训练"。</p>
+        <p><span style="color:$accent"><strong>② 经验贡献可分解</strong></span>：通用视觉经验（预训练）+17 pp，任务适应（微调）再 +17 pp；去掉全部经验（随机初始化）只剩 56%——可类比人类"通用视觉经验 + 专科训练"的两段式（定性类比，非效率等同）。</p>
   - elementId: fs-3
     elementType: text
     bounds: [580, 356, 320, 76]
@@ -81,4 +81,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "10"
+      text: "12"

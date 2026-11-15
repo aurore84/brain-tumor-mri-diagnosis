@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "11"
+      text: "08"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -51,7 +51,7 @@ elements:
     content:
       style: "$small"
       align: [center, top]
-      text: 图 9　一次真实推理：脑膜瘤，置信度 99.7%
+      text: 图 9　一次真实推理：脑膜瘤，模型输出概率 99.7%（未经校准，不等于诊断正确率）
   - elementId: demo-flow-heading
     elementType: text
     bounds: [528, 266, 372, 22]
@@ -76,7 +76,7 @@ elements:
       style: "$body"
       fontSize: 12
       text: |
-        <p><strong>系统完整性</strong>：数据 → 训练 → 评估 → 可视化 → 部署五环全部打通，非单点脚本；界面内置四类示例图像，一键试跑。</p>
+        <p><strong>系统完整性</strong>：数据 → 训练 → 评估 → 可视化 → 部署五环全部打通，非单点脚本；界面内置四类示例图像，一键试跑。演示模型为 ResNet18 全连接头（内部测试 94.1%），与 Hopfield 记忆头的指标分开报告。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
@@ -91,4 +91,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "12"
+      text: "08"

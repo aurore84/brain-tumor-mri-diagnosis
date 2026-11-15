@@ -11,13 +11,13 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "07"
+      text: "05"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 760, 30]
     content:
       style: "$pageTitle"
-      text: 外部验证：模型"换家医院"还行吗
+      text: 跨来源测试：泛化性能下降多少
   - elementId: head-rule
     elementType: shape
     bounds: [60, 76, 840, 1.5]
@@ -35,7 +35,7 @@ elements:
     content:
       style: "$small"
       align: [center, top]
-      text: 图 5　外部验证混淆矩阵（独立整理来源数据集，3096 张，模型未做任何调整）
+      text: 图 5　跨来源测试混淆矩阵（独立整理来源数据集，3096 张，模型未做任何调整）
   # 右：三模型内外对比表
   - elementId: cmp-table
     elementType: table
@@ -51,9 +51,9 @@ elements:
       - - text: "ResNet18"
           bold: true
         - text: "11.2M"
-        - text: "93.0%"
+        - text: "94.1%"
           bold: true
-        - text: "81.7%"
+        - text: "84.6%"
           bold: true
       - - text: "ResNet34"
         - text: "21.3M"
@@ -83,7 +83,7 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>① 领域偏移真实存在，且结构清晰</strong></span>：内部 93.0% → 外部 81.7%（-11.3 pp）。逐类看，下降几乎全部来自胶质瘤（召回 57.5%，集中于训练集中稀少的序列类型）；无肿瘤（97.7%）与垂体瘤（96.1%）跨分布稳定。</p>
+        <p><span style="color:$accent"><strong>① 领域偏移真实存在，且结构清晰</strong></span>：内部 94.1% → 外部 84.6%（-9.5 pp）。逐类看，下降主要来自胶质瘤（召回 66.9%，集中于训练集中稀少的序列类型）；无肿瘤（99.3%）与垂体瘤（94.8%）跨分布稳定。</p>
   - elementId: ext-2
     elementType: text
     bounds: [470, 402, 430, 76]
@@ -91,7 +91,7 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>② 更深 ≠ 更好，且结论跨分布稳定</strong></span>：三个模型内外排名一致（ResNet18 最优）；小数据集上参数翻倍反而更易过拟合训练分布。</p>
+        <p><span style="color:$accent"><strong>② 更深 ≠ 更好</strong></span>：本次实验中三个模型内外排名一致（ResNet18 最优），提示结论不依赖单一测试集；小数据集上参数翻倍反而更易过拟合训练分布。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
@@ -106,4 +106,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "08"
+      text: "05"

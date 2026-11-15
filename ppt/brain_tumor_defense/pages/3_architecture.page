@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "02"
+      text: "备1"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -86,7 +86,7 @@ elements:
       lineHeight: 1.25
       text: |
         <p style="text-align:center">测试集评估</p>
-        <p style="text-align:center">93.0%</p>
+        <p style="text-align:center">94.1%</p>
   - elementId: step-4
     elementType: shape
     bounds: [564, 130, 158, 54]
@@ -206,8 +206,8 @@ elements:
       style: "$body"
       text: |
         <p><strong>可复现性</strong></p>
-        <p style="margin-top:4px">· 固定随机种子，训练日志全程记录</p>
-        <p>· 结果图表由脚本自动生成，可一键重跑</p>
+        <p style="margin-top:4px">· 固定数据划分与训练种子（--seed），日志全程记录</p>
+        <p>· 结果图表由脚本自动生成；验证集固定预处理已修正并复验</p>
         <p>· 普通 CPU 笔记本即可完成全部训练</p>
   - elementId: footer-left
     elementType: text
@@ -223,4 +223,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "03"
+      text: "10"

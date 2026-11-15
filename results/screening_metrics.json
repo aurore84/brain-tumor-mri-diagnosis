@@ -1,0 +1,24 @@
+{
+  "internal_test": {
+    "n_tumor": 1200,
+    "n_notumor": 400,
+    "tumor_missed_as_notumor": 28,
+    "sensitivity": 0.9766666666666667,
+    "specificity": 0.9975,
+    "tp": 1172,
+    "fn": 28,
+    "tn": 399,
+    "fp": 1
+  },
+  "external": {
+    "n_tumor": 2658,
+    "n_notumor": 438,
+    "tumor_missed_as_notumor": 143,
+    "sensitivity": 0.9462001504890896,
+    "specificity": 0.9931506849315068,
+    "tp": 2515,
+    "fn": 143,
+    "tn": 435,
+    "fp": 3
+  }
+}

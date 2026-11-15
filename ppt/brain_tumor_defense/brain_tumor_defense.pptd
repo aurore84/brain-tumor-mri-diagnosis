@@ -44,16 +44,18 @@ theme:
         - {fill: {type: solid, color: "#F7F3E8"}}
         - {fill: {type: solid, color: "#EFE7D6"}}
 pages:
+  # ===== 主讲 9 页（5 分钟答辩主线） =====
   - pages/1_cover.page
-  - pages/2_background.page
-  - pages/3_architecture.page
   - pages/4_dataset.page
   - pages/5_method.page
-  - pages/6_results.page
   - pages/7_confusion.page
   - pages/7b_external.page
   - pages/7c_hopfield.page
-  - pages/7d_fewshot.page
   - pages/8_gradcam.page
   - pages/9_demo.page
   - pages/10_summary.page
+  # ===== 备份 4 页（问答时调取） =====
+  - pages/3_architecture.page
+  - pages/6_results.page
+  - pages/7d_fewshot.page
+  - pages/2_background.page

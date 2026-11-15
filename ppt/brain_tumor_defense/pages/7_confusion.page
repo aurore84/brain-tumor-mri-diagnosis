@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "06"
+      text: "04"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -49,7 +49,7 @@ elements:
     content:
       style: "$body"
       text: |
-        <p><span style="color:$accent"><strong>筛查最关键指标达标</strong></span>：无肿瘤召回率 <strong>100%</strong>、垂体瘤 <strong>99.5%</strong>——辅助筛查场景下"不漏诊"优先于"分得细"。</p>
+        <p><span style="color:$accent"><strong>用对筛查指标</strong></span>：无肿瘤召回 100% 只说明健康图像不被误判，<strong>不等于不漏诊</strong>；按"肿瘤 vs 无肿瘤"折叠统计，内部测试肿瘤漏判为无肿瘤仅 <strong>28/1200</strong>（敏感度 97.7%），外部漏判 143/2658（94.6%）。</p>
   - elementId: ana-line-1
     elementType: shape
     bounds: [500, 236, 400, 1]
@@ -61,7 +61,7 @@ elements:
     content:
       style: "$body"
       text: |
-        <p><span style="color:$accent"><strong>主要混淆：胶质瘤 → 脑膜瘤（67 例）</strong></span>。二者在 T1 增强 MRI 上都表现为明显强化病灶，影像表型相近；临床上同样需要灌注、波谱等额外序列鉴别——<strong>模型犯的正是"像人一样的错误"</strong>。</p>
+        <p><span style="color:$accent"><strong>主要混淆：胶质瘤 → 脑膜瘤（49 例）</strong></span>。二者在 T1 增强 MRI 上都表现为明显强化病灶，影像表型相近；临床上同样需要灌注、波谱等额外序列鉴别——<strong>模型犯的正是"像人一样的错误"</strong>。</p>
   - elementId: ana-line-2
     elementType: shape
     bounds: [500, 370, 400, 1]
@@ -88,4 +88,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "07"
+      text: "04"

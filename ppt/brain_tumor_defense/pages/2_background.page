@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "01"
+      text: "备4"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -53,7 +53,7 @@ elements:
       style: "$body"
       text: |
         <p><span style="color:$accent"><strong>① 视觉注意机制</strong></span></p>
-        <p style="margin-top:4px">用 Grad-CAM 把模型"注视"的脑区可视化，与人类选择性注意直接类比，可量化比较人机注意差异。</p>
+        <p style="margin-top:4px">用 Grad-CAM 把模型的高响应区域可视化，与人类选择性注意形成定性类比，并给出定量对比的接口（眼动 IoU）。</p>
   - elementId: rel-line-1
     elementType: shape
     bounds: [520, 220, 380, 1]
@@ -105,4 +105,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "02"
+      text: "13"

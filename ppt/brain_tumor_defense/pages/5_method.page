@@ -11,7 +11,7 @@ elements:
       color: "$accent"
       fontFamily: 思源宋体
       bold: true
-      text: "04"
+      text: "03"
   - elementId: page-title
     elementType: text
     bounds: [112, 34, 700, 30]
@@ -85,7 +85,7 @@ elements:
       text: |
         <p><span style="color:$primary"><strong>阶段二：微调深层特征</strong></span></p>
         <p>解冻最后一个残差块（layer4），小学习率微调</p>
-        <p>lr = 1e-4 · 3 epochs → 验证集 <strong>97.1%</strong></p>
+        <p>lr = 1e-4 · 3 epochs → 验证集 <strong>96.1%</strong></p>
   # 右：设计理由
   - elementId: why-heading
     elementType: text
@@ -100,7 +100,7 @@ elements:
       style: "$body"
       text: |
         <p><strong>① 预训练特征可迁移</strong>：ImageNet 学到的边缘、纹理检测器对医学影像同样有效，类似人类视觉经验的"迁移"。</p>
-        <p style="margin-top:8px"><strong>② 先头后身，防止遗忘</strong>：直接全量微调会在小数据集上破坏预训练特征（灾难性遗忘）；先固定骨干训头，再小步微调深层。</p>
+        <p style="margin-top:8px"><strong>② 先头后身，降低过度更新风险</strong>：小数据集上直接全量微调有破坏预训练特征的风险；先固定骨干训头，再小步微调深层（未设全量微调对照，此为设计动机而非已证结论）。</p>
         <p style="margin-top:8px"><strong>③ 计算可行</strong>：两阶段策略让无 GPU 的普通笔记本也能完成训练（每 epoch 约 100–130 秒）。</p>
   - elementId: impl-heading
     elementType: text
@@ -131,4 +131,4 @@ elements:
       style: "$small"
       fontSize: 9
       align: [right, top]
-      text: "05"
+      text: "03"

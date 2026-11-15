@@ -32,14 +32,14 @@ hp = [r["hopfield_acc"] * 100 for r in rows
 ax.plot(x[:len(hp)], hp, "s--", color="#C9828B",
         label="记忆原型头 @ 微调骨干（Hopfield）", linewidth=2)
 ax.axvspan(10, 60, color="#C9828B", alpha=0.12)
-ax.annotate("人类医生：\n数十例即可上手", xy=(20, 62), fontsize=10,
+ax.annotate("少样本区间\n（每类十余人量级）", xy=(20, 62), fontsize=10,
             color="#684765", ha="center")
 ax.annotate("", xy=(16, 92), xytext=(20, 66),
             arrowprops=dict(arrowstyle="->", color="#684765", lw=1.2))
 ax.set_xscale("log")
 ax.set_xlabel("每类训练样本数（对数轴）")
 ax.set_ylabel("测试准确率 (%)")
-ax.set_title("小样本学习曲线：视觉经验（预训练）让机器像人一样举一反三")
+ax.set_title("小样本学习曲线：视觉经验是样本效率的主要来源")
 ax.legend(loc="lower right", fontsize=9)
 ax.grid(alpha=0.3)
 fig.tight_layout()
