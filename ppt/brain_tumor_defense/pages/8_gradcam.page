@@ -46,35 +46,37 @@ elements:
       style: "$small"
       align: [center, top]
       text: 图 7　三个类别的 Grad-CAM 可视化：左为原始 MRI，右为模型注意力热力图（红 = 关注度高）
-  # 两个认知科学观察
+  # 两个认知科学观察（含证据边界）
   - elementId: obs-1
     elementType: text
-    bounds: [60, 278, 840, 76]
+    bounds: [60, 278, 840, 82]
     content:
       style: "$body"
+      fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>观察一：机器注意与人类注意对齐。</strong></span>三类样本的热区都落在肿瘤病灶及周围水肿带上，与放射科医生阅片时的注视模式一致——CNN 学到的判别特征在空间上与人类专家的选择性注意重合。</p>
+        <p><span style="color:$accent"><strong>观察一：机器注意与人类阅片模式形成类比。</strong></span>三类正确样本的热区都落在影像上的病灶样区域附近，与"放射科医生优先注视病灶"的阅片模式一致。<span style="color:$muted">证据边界：本数据无病灶分割标注、无眼动记录，这是定性类比，尚不能断言人机注意定量重合。</span></p>
   - elementId: obs-line
     elementType: shape
-    bounds: [60, 364, 840, 1]
+    bounds: [60, 368, 840, 1]
     shapeName: rect
     fill: {type: solid, color: "#D8CFC0"}
   - elementId: obs-2
     elementType: text
-    bounds: [60, 378, 840, 76]
+    bounds: [60, 382, 840, 82]
     content:
       style: "$body"
+      fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>观察二：错误也是"认知性"的。</strong></span>被误判的胶质瘤样本，其热区仍正确落在病灶上——模型"看对了地方、下错了结论"，类似人类初学者能定位病灶却分不清亚型，提示瓶颈在特征鉴别而非注意定位。</p>
+        <p><span style="color:$accent"><strong>观察二：错误也呈现"认知性"结构。</strong></span>在若干误判样本上，热区仍覆盖异常区域——提示瓶颈可能在特征鉴别而非区域定位，类似初学者能定位病灶却分不清亚型；作为定性线索，它与混淆矩阵的错误结构相互印证。</p>
   - elementId: obs-conclusion
     elementType: text
-    bounds: [60, 462, 840, 22]
+    bounds: [60, 470, 840, 22]
     content:
-      fontSize: 14
+      fontSize: 13.5
       color: "$primary"
       fontFamily: MiSans
       bold: true
-      text: 注意力可视化把"黑箱分类器"变成可与人比较的认知对象，这正是本课题与课程的核心连接。
+      text: 热力图把"黑箱分类器"变成可与人比较的认知对象；下一步用眼动实验做注视点—热区重叠率的定量验证。
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]

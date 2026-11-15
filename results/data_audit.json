@@ -1,0 +1,846 @@
+{
+  "groups": {
+    "train": {
+      "n": 5600,
+      "width": {
+        "min": 150,
+        "median": 512,
+        "max": 1375
+      },
+      "height": {
+        "min": 168,
+        "median": 512,
+        "max": 1446
+      },
+      "modes": {
+        "L": 2358,
+        "RGB": 3238,
+        "RGBA": 3,
+        "P": 1
+      },
+      "class_count": {
+        "glioma": 1400,
+        "meningioma": 1400,
+        "notumor": 1400,
+        "pituitary": 1400
+      },
+      "errors": 0
+    },
+    "test": {
+      "n": 1600,
+      "width": {
+        "min": 150,
+        "median": 512,
+        "max": 1149
+      },
+      "height": {
+        "min": 167,
+        "median": 512,
+        "max": 1019
+      },
+      "modes": {
+        "RGB": 891,
+        "L": 709
+      },
+      "class_count": {
+        "glioma": 400,
+        "meningioma": 400,
+        "notumor": 400,
+        "pituitary": 400
+      },
+      "errors": 0
+    },
+    "external": {
+      "n": 3096,
+      "width": {
+        "min": 256,
+        "median": 256,
+        "max": 256
+      },
+      "height": {
+        "min": 256,
+        "median": 256,
+        "max": 256
+      },
+      "modes": {
+        "RGB": 3096
+      },
+      "class_count": {
+        "glioma_tumor": 901,
+        "meningioma_tumor": 913,
+        "normal": 438,
+        "pituitary_tumor": 844
+      },
+      "errors": 0
+    }
+  },
+  "exact_duplicates": {
+    "train": {
+      "n_duplicate_groups": 138,
+      "examples": [
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_89.jpg",
+          "data\\Training\\meningioma\\Tr-me_889.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_90.jpg",
+          "data\\Training\\meningioma\\Tr-me_1242.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_91.jpg",
+          "data\\Training\\meningioma\\Tr-me_245.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_92.jpg",
+          "data\\Training\\meningioma\\Tr-me_268.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_94.jpg",
+          "data\\Training\\meningioma\\Tr-me_824.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_95.jpg",
+          "data\\Training\\meningioma\\Tr-me_1295.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_97.jpg",
+          "data\\Training\\meningioma\\Tr-me_532.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-aug-me_98.jpg",
+          "data\\Training\\meningioma\\Tr-me_1274.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-me_1094.jpg",
+          "data\\Training\\meningioma\\Tr-me_219.jpg"
+        ],
+        [
+          "data\\Training\\meningioma\\Tr-me_1101.jpg",
+          "data\\Training\\meningioma\\Tr-me_836.jpg"
+        ]
+      ]
+    },
+    "test": {
+      "n_duplicate_groups": 15,
+      "examples": [
+        [
+          "data\\Testing\\glioma\\Te-gl_129.jpg",
+          "data\\Testing\\glioma\\Te-gl_303.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_140.jpg",
+          "data\\Testing\\glioma\\Te-gl_238.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_143.jpg",
+          "data\\Testing\\glioma\\Te-gl_72.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_144.jpg",
+          "data\\Testing\\glioma\\Te-gl_59.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_166.jpg",
+          "data\\Testing\\glioma\\Te-gl_278.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_170.jpg",
+          "data\\Testing\\glioma\\Te-gl_178.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_171.jpg",
+          "data\\Testing\\glioma\\Te-gl_228.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_177.jpg",
+          "data\\Testing\\glioma\\Te-gl_36.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_204.jpg",
+          "data\\Testing\\glioma\\Te-gl_259.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_212.jpg",
+          "data\\Testing\\glioma\\Te-gl_272.jpg",
+          "data\\Testing\\glioma\\Te-gl_338.jpg"
+        ]
+      ]
+    },
+    "external": {
+      "n_duplicate_groups": 217,
+      "examples": [
+        [
+          "data_external\\glioma_tumor\\G_143.jpg",
+          "data_external\\glioma_tumor\\G_545.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_227.jpg",
+          "data_external\\glioma_tumor\\G_412.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_330.jpg",
+          "data_external\\glioma_tumor\\G_335.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_333.jpg",
+          "data_external\\glioma_tumor\\G_357.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_368.jpg",
+          "data_external\\glioma_tumor\\G_613.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_379.jpg",
+          "data_external\\glioma_tumor\\G_614.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_401.jpg",
+          "data_external\\glioma_tumor\\G_688.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_423.jpg",
+          "data_external\\glioma_tumor\\G_528.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_434.jpg",
+          "data_external\\glioma_tumor\\G_577.jpg"
+        ],
+        [
+          "data_external\\glioma_tumor\\G_446.jpg",
+          "data_external\\glioma_tumor\\G_774.jpg"
+        ]
+      ]
+    },
+    "cross": {
+      "train__test": {
+        "n_exact": 0,
+        "examples": []
+      },
+      "train__external": {
+        "n_exact": 0,
+        "examples": []
+      },
+      "test__external": {
+        "n_exact": 0,
+        "examples": []
+      }
+    }
+  },
+  "near_duplicates_cross": {
+    "train__test": {
+      "n_found_first50": 50,
+      "examples": [
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\glioma\\Te-gl_148.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\glioma\\Te-gl_156.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\glioma\\Te-gl_218.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\glioma\\Te-gl_309.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\glioma\\Te-gl_51.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-aug-me_83.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-aug-me_88.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_13.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_169.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_193.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_199.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_209.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\meningioma\\Te-me_44.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\notumor\\Te-no_220.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\notumor\\Te-no_347.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_107.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_139.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_161.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_187.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_200.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_203.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_288.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_296.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_339.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_342.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_352.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data\\Testing\\pituitary\\Te-pi_400.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\glioma\\Te-gl_144.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\glioma\\Te-gl_334.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\glioma\\Te-gl_59.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\glioma\\Te-gl_98.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\meningioma\\Te-aug-me_20.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\meningioma\\Te-aug-me_75.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\meningioma\\Te-me_106.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\meningioma\\Te-me_98.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\notumor\\Te-no_224.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\notumor\\Te-no_386.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\pituitary\\Te-pi_284.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\pituitary\\Te-pi_315.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\pituitary\\Te-pi_377.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data\\Testing\\pituitary\\Te-pi_393.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_124.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_142.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_193.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_213.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_231.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_263.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_35.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_356.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data\\Testing\\glioma\\Te-gl_377.jpg"
+        ]
+      ]
+    },
+    "train__external": {
+      "n_found_first50": 50,
+      "examples": [
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data_external\\meningioma_tumor\\M_459.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data_external\\normal\\N_155.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data_external\\normal\\N_93.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1.jpg",
+          "data_external\\pituitary_tumor\\P_199.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_151.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_169.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_276.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_280.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_324.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_437.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_58.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_60.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_652.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_675.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_764.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_772.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_784.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\glioma_tumor\\G_833.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_102.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_110.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_382.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_399.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_431.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_558.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_565.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_566.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_567.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_569.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_571.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_573.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_75.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_893.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\normal\\N_264.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\pituitary_tumor\\P_341.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\pituitary_tumor\\P_376.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\pituitary_tumor\\P_403.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_10.jpg",
+          "data_external\\pituitary_tumor\\P_690.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_207.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_208.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_634.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_645.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1001.jpg",
+          "data_external\\meningioma_tumor\\M_628.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\glioma_tumor\\G_290.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\meningioma_tumor\\M_154.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\meningioma_tumor\\M_913.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\normal\\N_319.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\normal\\N_410.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1003.jpg",
+          "data_external\\normal\\N_55.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1004.jpg",
+          "data_external\\glioma_tumor\\G_13.jpg"
+        ],
+        [
+          "data\\Training\\glioma\\Tr-gl_1004.jpg",
+          "data_external\\meningioma_tumor\\M_628.jpg"
+        ]
+      ]
+    },
+    "test__external": {
+      "n_found_first50": 50,
+      "examples": [
+        [
+          "data\\Testing\\glioma\\Te-gl_1.jpg",
+          "data_external\\glioma_tumor\\G_480.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_252.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\meningioma_tumor\\M_9.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_102.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_116.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_148.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_177.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_187.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_202.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_313.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_322.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_329.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_344.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_347.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_349.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_390.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_398.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_421.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_46.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_6.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_10.jpg",
+          "data_external\\normal\\N_86.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_252.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\meningioma_tumor\\M_9.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_102.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_116.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_146.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_177.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_187.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_313.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_322.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_329.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_344.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_347.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_349.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_390.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_398.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_421.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_46.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_100.jpg",
+          "data_external\\normal\\N_6.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_102.jpg",
+          "data_external\\normal\\N_125.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_102.jpg",
+          "data_external\\normal\\N_208.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_102.jpg",
+          "data_external\\normal\\N_33.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_104.jpg",
+          "data_external\\glioma_tumor\\G_46.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_102.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_116.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_187.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_322.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_325.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_344.jpg"
+        ],
+        [
+          "data\\Testing\\glioma\\Te-gl_105.jpg",
+          "data_external\\normal\\N_347.jpg"
+        ]
+      ]
+    }
+  }
+}

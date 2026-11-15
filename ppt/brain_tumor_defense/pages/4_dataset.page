@@ -50,7 +50,7 @@ elements:
         <p>· 统一缩放至 224 × 224，适配 ResNet 输入</p>
         <p>· 训练增强：随机水平翻转、±10° 旋转、亮度/对比度抖动</p>
         <p>· ImageNet 均值方差归一化，匹配预训练分布</p>
-        <p>· 训练集再划出 10% 作为验证集（固定随机种子 42）</p>
+        <p>· 训练集再划出 10% 作为验证集（固定随机种子 42，验证集用固定预处理、不做随机增强）</p>
   # 右：数据统计表
   - elementId: data-table
     elementType: table
@@ -88,11 +88,19 @@ elements:
       text: 表 1　数据集类别分布（四类均衡）
   - elementId: data-source
     elementType: text
-    bounds: [640, 372, 260, 60]
+    bounds: [640, 372, 260, 44]
     content:
       style: "$small"
       text: |
         <p>数据来源：<a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset">Kaggle — Brain Tumor MRI Dataset</a>（Nickparvar, 2021）</p>
+  - elementId: data-audit
+    elementType: text
+    bounds: [640, 420, 260, 76]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: |
+        <p><strong>数据审计</strong>：训练/测试/外部三组间 MD5 精确重复 0 对；感知哈希疑似对经 16×16 哈希＋像素级复核均非真重复——排除跨组泄漏。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]

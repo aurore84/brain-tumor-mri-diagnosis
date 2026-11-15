@@ -1,10 +1,12 @@
-torch>=2.0
-torchvision>=0.15
-gradio>=4.0
-scikit-learn
-opencv-python-headless
-grad-cam
-kagglehub
-matplotlib
-numpy
-Pillow
+# 复现环境（Python 3.12，CPU 即可，2026-11 验证）
+torch==2.15.0
+torchvision==0.29.2
+numpy==2.4.4
+Pillow==12.2.0
+matplotlib==3.10.9
+scikit-learn==1.9.0
+scipy==1.18.1
+gradio==6.31.0
+grad-cam==1.5.7
+opencv-python-headless==5.0.0.93
+kagglehub==1.0.3

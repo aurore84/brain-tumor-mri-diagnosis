@@ -60,7 +60,14 @@ def build_model(arch: str, num_classes: int = 4):
     return m, backbone_params, head_params, last_block
 
 
-def get_loaders(batch_size: int):
+EVAL_TF = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+])
+
+
+def get_loaders(batch_size: int, seed: int = 42):
     train_tf = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.RandomHorizontalFlip(),
@@ -69,18 +76,16 @@ def get_loaders(batch_size: int):
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
-    test_tf = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-    ])
-    train_ds = datasets.ImageFolder(DATA / "Training", transform=train_tf)
-    test_ds = datasets.ImageFolder(DATA / "Testing", transform=test_tf)
-    # 从训练集划 10% 做验证集
-    val_size = int(0.1 * len(train_ds))
-    train_ds, val_ds = torch.utils.data.random_split(
-        train_ds, [len(train_ds) - val_size, val_size],
-        generator=torch.Generator().manual_seed(42))
+    # 验证集使用与测试集一致的固定预处理（不带随机增强），模型选择更稳定
+    train_full = datasets.ImageFolder(DATA / "Training", transform=train_tf)
+    val_full = datasets.ImageFolder(DATA / "Training", transform=EVAL_TF)
+    test_ds = datasets.ImageFolder(DATA / "Testing", transform=EVAL_TF)
+    # 从训练集划 10% 做验证集（同一批下标，两套预处理）
+    val_size = int(0.1 * len(train_full))
+    gen = torch.Generator().manual_seed(seed)
+    train_ds, val_split = torch.utils.data.random_split(
+        train_full, [len(train_full) - val_size, val_size], generator=gen)
+    val_ds = torch.utils.data.Subset(val_full, val_split.indices)
     train_ld = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=0)
     val_ld = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=0)
     test_ld = DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=0)
@@ -113,9 +118,16 @@ def main():
     ap.add_argument("--epochs", type=int, default=3)
     ap.add_argument("--batch", type=int, default=32)
     ap.add_argument("--lr", type=float, default=None)
+    ap.add_argument("--seed", type=int, default=42, help="随机种子（划分/初始化/增强）")
     args = ap.parse_args()
 
-    print(f"设备: {DEVICE} | 模型: {args.arch} | 阶段: {args.stage}")
+    torch.manual_seed(args.seed)
+    import random
+    import numpy as np
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+
+    print(f"设备: {DEVICE} | 模型: {args.arch} | 阶段: {args.stage} | 种子: {args.seed}")
     model, backbone_params, head_params, last_block = build_model(args.arch)
     model = model.to(DEVICE)
 
@@ -136,7 +148,7 @@ def main():
             list(last_block.parameters()) + head_params, lr=args.lr or 1e-4)
         history_path = RESULTS / f"{args.arch}_finetune_history.json"
 
-    train_ld, val_ld, test_ld = get_loaders(args.batch)
+    train_ld, val_ld, test_ld = get_loaders(args.batch, seed=args.seed)
     criterion = nn.CrossEntropyLoss()
     history = []
 
@@ -157,7 +169,7 @@ def main():
     # 保存
     out_ckpt = ckpt if args.stage == "head" else MODELS / f"{args.arch}_finetune.pth"
     torch.save(model.state_dict(), out_ckpt)
-    history.append({"test_loss": te_loss, "test_acc": te_acc})
+    history.append({"test_loss": te_loss, "test_acc": te_acc, "seed": args.seed})
     history_path.write_text(json.dumps(history, indent=2), encoding="utf-8")
     print(f"模型已保存: {out_ckpt}")
     print(f"训练记录: {history_path}")

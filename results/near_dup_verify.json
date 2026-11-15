@@ -1,0 +1,48 @@
+{
+  "train__test": {
+    "checked": 50,
+    "likely_real_duplicates": 1,
+    "real_examples": [
+      {
+        "a": "data\\Training\\glioma\\Tr-gl_10.jpg",
+        "b": "data\\Testing\\glioma\\Te-gl_98.jpg",
+        "hash16_dist": 7,
+        "mse": 0.005
+      }
+    ],
+    "hash16_dist_range": [
+      7,
+      41
+    ],
+    "mse_range": [
+      0.005,
+      0.0402
+    ]
+  },
+  "train__external": {
+    "checked": 50,
+    "likely_real_duplicates": 0,
+    "real_examples": [],
+    "hash16_dist_range": [
+      9,
+      39
+    ],
+    "mse_range": [
+      0.0163,
+      0.0683
+    ]
+  },
+  "test__external": {
+    "checked": 50,
+    "likely_real_duplicates": 0,
+    "real_examples": [],
+    "hash16_dist_range": [
+      14,
+      43
+    ],
+    "mse_range": [
+      0.0167,
+      0.1714
+    ]
+  }
+}

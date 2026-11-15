@@ -83,7 +83,7 @@ elements:
       style: "$body"
       fontSize: 12.5
       text: |
-        <p><span style="color:$accent"><strong>① 领域偏移真实存在</strong></span>：内部 93.0% → 外部 81.7%（-11.3 pp），不同来源影像的灰度与对比度分布差异是主因——这正是医学 AI 落地的核心挑战。</p>
+        <p><span style="color:$accent"><strong>① 领域偏移真实存在，且结构清晰</strong></span>：内部 93.0% → 外部 81.7%（-11.3 pp）。逐类看，下降几乎全部来自胶质瘤（召回 57.5%，集中于训练集中稀少的序列类型）；无肿瘤（97.7%）与垂体瘤（96.1%）跨分布稳定。</p>
   - elementId: ext-2
     elementType: text
     bounds: [470, 402, 430, 76]

@@ -57,48 +57,54 @@ elements:
       text: |
         <p><span style="color:$primary"><strong>理论链接</strong></span>：现代 Hopfield 的 softmax 检索更新规则，与注意力机制在数学上<strong>等价</strong>（Ramsauer et al., 2020）——</p>
         <p style="margin-top:4px">联想记忆与注意力是同一枚硬币的两面，本项目的"记忆"与"注意"两条认知线索在此汇合。</p>
-  # 右：对比结果表
+  # 右：公平对比结果表（5 种子）
   - elementId: hop-table
     elementType: table
-    bounds: [520, 104, 380, 150]
-    columnWidths: [0.42, 0.2, 0.19, 0.19]
-    rowHeights: [0.25, 0.25, 0.25, 0.25]
+    bounds: [500, 100, 400, 165]
+    columnWidths: [0.42, 0.16, 0.24, 0.18]
+    rowHeights: [0.2, 0.2, 0.2, 0.2, 0.2]
     style: "$default"
     rows:
       - - text: "分类头"
-        - text: "训练"
-        - text: "内部"
+        - text: "参数量"
+        - text: "内部(5种子)"
         - text: "外部"
-      - - text: "全连接（判别式）"
-        - text: "两阶段"
-        - text: "93.0%"
-        - text: "81.7%"
-      - - text: "Hopfield 原型记忆"
-        - text: "零训练"
-        - text: "92.0%"
-        - text: "79.0%"
-      - - text: "Hopfield 可训练记忆"
+      - - text: "线性头"
+        - text: "2k"
+        - text: "92.6±0.0%"
+        - text: "81.6%"
+      - - text: "原型记忆（零训练）"
+        - text: "0"
+        - text: "92.1%"
+        - text: "79.7%"
+      - - text: "MLP 头（参数对齐）"
+        - text: "66k"
+        - text: "93.9±0.0%"
+        - text: "83.3%"
+      - - text: "Hopfield 记忆头"
           bold: true
-        - text: "仅头 30 ep"
-        - text: "93.9%"
+        - text: "70k"
+        - text: "94.0±0.0%*"
           bold: true
-        - text: "82.0%"
+        - text: "83.4%"
           bold: true
   - elementId: hop-caption
     elementType: text
-    bounds: [520, 260, 380, 16]
+    bounds: [500, 270, 400, 28]
     content:
       style: "$small"
-      text: 表 4　判别式 vs 记忆式分类头（同一冻结骨干特征）
+      fontSize: 9
+      text: 表 4　四种分类头公平对比：同一冻结骨干特征、同一训练预算、5 种子 mean±std（*Hopfield 剔除 1 个训练塌陷种子）
   - elementId: hop-findings
     elementType: text
-    bounds: [520, 292, 380, 180]
+    bounds: [500, 306, 400, 186]
     content:
       style: "$body"
-      fontSize: 12.5
+      fontSize: 11.5
       text: |
-        <p><span style="color:$accent"><strong>① 零训练的记忆检索达 92.0%</strong></span>——仅靠"记住每类长什么样"就几乎追平判别式头，说明特征空间已形成良好类别聚类；</p>
-        <p style="margin-top:8px"><span style="color:$accent"><strong>② 可训练记忆头 93.9% 反超</strong></span>判别式头，外部验证同样略优（82.0%）——记忆机制不仅更贴近人类认知，性能也不吃亏。</p>
+        <p><span style="color:$accent"><strong>① 零训练原型记忆 92.1%</strong></span>——只"记住每类长什么样"就接近线性头，说明特征空间类别聚类良好；</p>
+        <p style="margin-top:6px"><span style="color:$accent"><strong>② 提升来自哪里？</strong></span>McNemar 检验：记忆头在 4/5 种子上显著优于线性头（p&lt;0.01）；但与参数量对齐的 MLP 打平——0.9pp 的提升主要来自更大的参数化头，而非联想检索本身；</p>
+        <p style="margin-top:6px"><span style="color:$accent"><strong>③ 容量消融</strong></span>：每类 ≥8 条记忆后性能饱和且稳定；≤4 条时训练不稳（部分种子塌陷）——记忆式头需要足够容量才可靠。</p>
   - elementId: footer-left
     elementType: text
     bounds: [60, 512, 400, 14]
