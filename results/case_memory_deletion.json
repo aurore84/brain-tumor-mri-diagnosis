@@ -1,0 +1,233 @@
+{
+  "index_metadata": {
+    "architecture": "resnet18",
+    "checkpoint": "models\\resnet18_finetune.pth",
+    "prototypes_per_class": 8,
+    "prototype_definition": "normalized mean feature of all training images in each class",
+    "exemplar_definition": "real training image nearest to each within-class cluster center",
+    "prototype_weight": 0.5,
+    "exemplar_weight": 0.5,
+    "seed": 42,
+    "training_feature_count": 5600,
+    "selected_training_indices": [
+      922,
+      242,
+      870,
+      782,
+      300,
+      200,
+      1164,
+      38,
+      2507,
+      2593,
+      1769,
+      2310,
+      1876,
+      2293,
+      2752,
+      2346,
+      4095,
+      3241,
+      3407,
+      3888,
+      3346,
+      3285,
+      3422,
+      3629,
+      4942,
+      4500,
+      5427,
+      5015,
+      5208,
+      5219,
+      5270,
+      4844
+    ]
+  },
+  "memory_count": 32,
+  "test_count": 1600,
+  "dual_routes": {
+    "prototype_accuracy": 0.9287499785423279,
+    "exemplar_accuracy": 0.9368749856948853,
+    "fused_accuracy": 0.9337499737739563,
+    "prototype_exemplar_agreement_rate": 0.9750000238418579,
+    "conflict_count": 40,
+    "prototype_accuracy_on_conflicts": 0.17499999701976776,
+    "exemplar_accuracy_on_conflicts": 0.5,
+    "fused_accuracy_on_conflicts": 0.375,
+    "prototype_weight": 0.5,
+    "exemplar_weight": 0.5
+  },
+  "baseline": {
+    "accuracy": 0.9368749856948853,
+    "mean_confidence": 0.8214138746261597,
+    "mean_true_class_probability": 0.7948693633079529
+  },
+  "deletions": [
+    {
+      "deleted_top_memories": 1,
+      "accuracy": 0.9193750023841858,
+      "accuracy_change": -0.017499983310699463,
+      "prediction_flip_rate": 0.04500000178813934,
+      "fused_accuracy": 0.9275000095367432,
+      "fused_accuracy_change": -0.006249964237213135,
+      "fused_prediction_flip_rate": 0.021250000223517418,
+      "mean_confidence": 0.7643832564353943,
+      "mean_confidence_change": -0.05703064799308777,
+      "mean_true_class_probability": 0.7403982281684875,
+      "mean_true_class_probability_change": -0.05447111278772354,
+      "deleted_memory_same_as_true_class_fraction": 0.9312499761581421
+    },
+    {
+      "deleted_top_memories": 2,
+      "accuracy": 0.9175000190734863,
+      "accuracy_change": -0.019374966621398926,
+      "prediction_flip_rate": 0.048124998807907104,
+      "fused_accuracy": 0.9262499809265137,
+      "fused_accuracy_change": -0.007499992847442627,
+      "fused_prediction_flip_rate": 0.01875000074505806,
+      "mean_confidence": 0.7124066948890686,
+      "mean_confidence_change": -0.10900723189115524,
+      "mean_true_class_probability": 0.692284345626831,
+      "mean_true_class_probability_change": -0.10258504748344421,
+      "deleted_memory_same_as_true_class_fraction": 0.9103124737739563
+    },
+    {
+      "deleted_top_memories": 4,
+      "accuracy": 0.8487499952316284,
+      "accuracy_change": -0.08812499046325684,
+      "prediction_flip_rate": 0.13562500476837158,
+      "fused_accuracy": 0.9256250262260437,
+      "fused_accuracy_change": -0.008124947547912598,
+      "fused_prediction_flip_rate": 0.030625000596046448,
+      "mean_confidence": 0.6131400465965271,
+      "mean_confidence_change": -0.20827381312847137,
+      "mean_true_class_probability": 0.5898438096046448,
+      "mean_true_class_probability_change": -0.2050255984067917,
+      "deleted_memory_same_as_true_class_fraction": 0.8889062404632568
+    }
+  ],
+  "most_sensitive_cases": [
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_126.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "notumor",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.3655273914337158,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_52.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.31360679864883423,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_4.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.3108101487159729,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-aug-me_29.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "pituitary",
+      "true_class_probability_drop": 0.3049370050430298,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_735.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_222.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "pituitary",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "pituitary",
+      "after_delete_exemplar_prediction": "pituitary",
+      "true_class_probability_drop": 0.2943018078804016,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_735.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_90.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "pituitary",
+      "true_class_probability_drop": 0.28998565673828125,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_735.jpg"
+    },
+    {
+      "path": "data\\Testing\\pituitary\\Te-pi_151.jpg",
+      "true_class": "pituitary",
+      "prototype_prediction": "pituitary",
+      "exemplar_prediction": "pituitary",
+      "fused_prediction": "pituitary",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.28937584161758423,
+      "deleted_memory": "data\\Training\\pituitary\\Tr-pi_472.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_41.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "pituitary",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "pituitary",
+      "after_delete_exemplar_prediction": "pituitary",
+      "true_class_probability_drop": 0.28481337428092957,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_735.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_158.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.2815791964530945,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_223.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "meningioma",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.28089094161987305,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\meningioma\\Te-me_8.jpg",
+      "true_class": "meningioma",
+      "prototype_prediction": "notumor",
+      "exemplar_prediction": "meningioma",
+      "fused_prediction": "meningioma",
+      "after_delete_exemplar_prediction": "notumor",
+      "true_class_probability_drop": 0.2634422183036804,
+      "deleted_memory": "data\\Training\\meningioma\\Tr-me_167.jpg"
+    },
+    {
+      "path": "data\\Testing\\pituitary\\Te-pi_89.jpg",
+      "true_class": "pituitary",
+      "prototype_prediction": "pituitary",
+      "exemplar_prediction": "pituitary",
+      "fused_prediction": "pituitary",
+      "after_delete_exemplar_prediction": "meningioma",
+      "true_class_probability_drop": 0.26059627532958984,
+      "deleted_memory": "data\\Training\\pituitary\\Tr-pi_472.jpg"
+    }
+  ],
+  "runtime_seconds": 135.0
+}
