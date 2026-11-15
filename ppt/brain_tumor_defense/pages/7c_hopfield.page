@@ -1,0 +1,116 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "08"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 760, 30]
+    content:
+      style: "$pageTitle"
+      text: 记忆 vs 判别：Hopfield 联想记忆分类头
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：认知动机
+  - elementId: motive-heading
+    elementType: text
+    bounds: [60, 100, 400, 22]
+    content:
+      style: "$heading"
+      text: 为什么要换"记忆式"分类头
+  - elementId: motive-body
+    elementType: text
+    bounds: [60, 130, 400, 190]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p>标准分类头（全连接层）是<strong>判别式</strong>的：学一个决策边界。</p>
+        <p style="margin-top:6px">而认知科学认为人类范畴化高度依赖<strong>记忆</strong>——原型理论与样例理论都主张：识别新事物时，人是在和脑中存储的范例做比较。</p>
+        <p style="margin-top:6px">我把全连接头换成<strong>现代 Hopfield 联想记忆网络</strong>：把类别特征作为"记忆原型"存入网络，推理即联想检索——让分类机制本身贴近人类的记忆机制。</p>
+  # 左下：理论链接
+  - elementId: theory-box
+    elementType: shape
+    bounds: [60, 336, 400, 130]
+    shapeName: rect
+    fill: {type: solid, color: "$pale"}
+  - elementId: theory-text
+    elementType: text
+    bounds: [76, 348, 368, 108]
+    content:
+      fontSize: 12
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.45
+      text: |
+        <p><span style="color:$primary"><strong>理论链接</strong></span>：现代 Hopfield 的 softmax 检索更新规则，与注意力机制在数学上<strong>等价</strong>（Ramsauer et al., 2020）——</p>
+        <p style="margin-top:4px">联想记忆与注意力是同一枚硬币的两面，本项目的"记忆"与"注意"两条认知线索在此汇合。</p>
+  # 右：对比结果表
+  - elementId: hop-table
+    elementType: table
+    bounds: [520, 104, 380, 150]
+    columnWidths: [0.42, 0.2, 0.19, 0.19]
+    rowHeights: [0.25, 0.25, 0.25, 0.25]
+    style: "$default"
+    rows:
+      - - text: "分类头"
+        - text: "训练"
+        - text: "内部"
+        - text: "外部"
+      - - text: "全连接（判别式）"
+        - text: "两阶段"
+        - text: "93.0%"
+        - text: "81.7%"
+      - - text: "Hopfield 原型记忆"
+        - text: "零训练"
+        - text: "92.0%"
+        - text: "79.0%"
+      - - text: "Hopfield 可训练记忆"
+          bold: true
+        - text: "仅头 30 ep"
+        - text: "93.9%"
+          bold: true
+        - text: "82.0%"
+          bold: true
+  - elementId: hop-caption
+    elementType: text
+    bounds: [520, 260, 380, 16]
+    content:
+      style: "$small"
+      text: 表 4　判别式 vs 记忆式分类头（同一冻结骨干特征）
+  - elementId: hop-findings
+    elementType: text
+    bounds: [520, 292, 380, 180]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>① 零训练的记忆检索达 92.0%</strong></span>——仅靠"记住每类长什么样"就几乎追平判别式头，说明特征空间已形成良好类别聚类；</p>
+        <p style="margin-top:8px"><span style="color:$accent"><strong>② 可训练记忆头 93.9% 反超</strong></span>判别式头，外部验证同样略优（82.0%）——记忆机制不仅更贴近人类认知，性能也不吃亏。</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "09"

@@ -1,0 +1,132 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "12"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: 总结：创新点、工作量与展望
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 创新点
+  - elementId: innov-heading
+    elementType: text
+    bounds: [60, 100, 500, 22]
+    content:
+      style: "$heading"
+      text: 创新点
+  - elementId: innov-body
+    elementType: text
+    bounds: [60, 130, 500, 96]
+    content:
+      style: "$body"
+      text: |
+        <p>① <strong>认知机制进入方法本身</strong>：以现代 Hopfield 联想记忆替换判别式分类头（93.9% 反超标准头），记忆机制与注意力机制在项目中统一。</p>
+        <p style="margin-top:6px">② <strong>三个对照实验回答认知问题</strong>：外部验证刻画领域偏移、小样本曲线分解"视觉经验"的贡献、Grad-CAM 对比人机注意与错误模式。</p>
+        <p style="margin-top:6px">③ <strong>资源约束下的两阶段训练策略</strong>：无 GPU 条件下 79.1% → 93.0%，从数据到 Web 的完整可演示闭环。</p>
+  - elementId: innov-line
+    elementType: shape
+    bounds: [60, 238, 500, 1]
+    shapeName: rect
+    fill: {type: solid, color: "#D8CFC0"}
+  # 工作量
+  - elementId: work-heading
+    elementType: text
+    bounds: [60, 254, 500, 22]
+    content:
+      style: "$heading"
+      text: 工作量
+  - elementId: work-body
+    elementType: text
+    bounds: [60, 284, 500, 96]
+    content:
+      style: "$body"
+      text: |
+        <p>· 7200 张 MRI 的下载、清洗与预处理流水线</p>
+        <p>· 三个模型 × 两阶段共 6 轮对比训练，全程日志可复现</p>
+        <p>· 完整评估套件：混淆矩阵、分类报告、训练曲线</p>
+        <p>· 3096 张独立来源数据的外部泛化验证</p>
+        <p>· Hopfield 联想记忆头（原型/可训练两组实验）</p>
+        <p>· 小样本学习曲线（3 骨干 × 5 数据量级对照）</p>
+        <p>· 8 组 Grad-CAM 案例分析与 Gradio 交互系统开发</p>
+  # 右上：结论数字回顾
+  - elementId: stat-box
+    elementType: shape
+    bounds: [620, 100, 280, 130]
+    shapeName: rect
+    fill: {type: solid, color: "$pale"}
+  - elementId: stat-text
+    elementType: text
+    bounds: [640, 114, 240, 104]
+    content:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.5
+      text: |
+        <p><span style="font-size:24px; color:$primary"><strong>93.9%</strong></span> 测试准确率（记忆头）</p>
+        <p><span style="font-size:24px; color:$primary"><strong>100%</strong></span> 无肿瘤召回</p>
+        <p><span style="font-size:24px; color:$primary"><strong>4</strong></span> 类脑肿瘤影像鉴别</p>
+  # 右下：局限与展望（粗线分隔"已证明/未确定"）
+  - elementId: future-bar
+    elementType: shape
+    bounds: [620, 254, 4, 220]
+    shapeName: rect
+    fill: {type: solid, color: "$accent"}
+  - elementId: future-heading
+    elementType: text
+    bounds: [640, 254, 260, 22]
+    content:
+      style: "$heading"
+      text: 局限与展望
+  - elementId: future-body
+    elementType: text
+    bounds: [640, 284, 260, 190]
+    content:
+      style: "$body"
+      fontSize: 12
+      text: |
+        <p>· 胶质瘤/脑膜瘤混淆待改进：分割先验、多序列输入</p>
+        <p style="margin-top:6px">· 外部验证准确率 81.7%，领域偏移的鲁棒性增强是下一步重点</p>
+        <p style="margin-top:6px">· 展望：引入眼动实验，定量对比人机注意分布——把本系统延伸为真正的认知科学实验</p>
+  # 结语
+  - elementId: closing
+    elementType: text
+    bounds: [60, 430, 840, 40]
+    content:
+      fontSize: 20
+      color: "$ink"
+      fontFamily: 思源宋体
+      bold: true
+      align: [center, middle]
+      text: 让机器"学会看"，再追问它"怎么看、怎么记、怎么学"——恳请批评指正
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "13"

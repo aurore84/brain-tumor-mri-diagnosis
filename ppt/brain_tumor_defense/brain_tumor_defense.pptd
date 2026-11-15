@@ -1,0 +1,59 @@
+version: v2
+title: 脑肿瘤MRI图像分类辅助诊断系统——认知科学大作业答辩
+size: [960, 540]
+theme:
+  colors:
+    primary: "#684765"
+    accent: "#C9828B"
+    bg: "#F7F3E8"
+    ink: "#27231F"
+    muted: "#8A8378"
+    pale: "#EFE7D6"
+  textStyles:
+    pageTitle:
+      fontSize: 26
+      color: "$ink"
+      fontFamily: 思源宋体
+      bold: true
+    heading:
+      fontSize: 16
+      color: "$primary"
+      fontFamily: MiSans
+      bold: true
+    body:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.45
+    small:
+      fontSize: 10
+      color: "$muted"
+      fontFamily: MiSans
+      lineHeight: 1.3
+  tableStyles:
+    default:
+      cellStyle:
+        fontSize: 12
+        fontFamily: MiSans
+        border: [null, null, {style: solid, width: 1, color: "#D8CFC0"}, null]
+      firstRowStyle:
+        fill: {type: solid, color: "$primary"}
+        color: "#FFFFFF"
+        bold: true
+      bodyStyles:
+        - {fill: {type: solid, color: "#F7F3E8"}}
+        - {fill: {type: solid, color: "#EFE7D6"}}
+pages:
+  - pages/1_cover.page
+  - pages/2_background.page
+  - pages/3_architecture.page
+  - pages/4_dataset.page
+  - pages/5_method.page
+  - pages/6_results.page
+  - pages/7_confusion.page
+  - pages/7b_external.page
+  - pages/7c_hopfield.page
+  - pages/7d_fewshot.page
+  - pages/8_gradcam.page
+  - pages/9_demo.page
+  - pages/10_summary.page

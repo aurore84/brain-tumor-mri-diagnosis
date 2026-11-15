@@ -1,0 +1,110 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "03"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: 数据集与预处理
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：样例拼图
+  - elementId: samples-img
+    elementType: image
+    bounds: [60, 118, 540, 144]
+    src: media/dataset_samples.png
+    fit: {mode: contain}
+  - elementId: samples-caption
+    elementType: text
+    bounds: [60, 270, 540, 18]
+    content:
+      style: "$small"
+      text: 图 1　四个类别的 MRI 样例（T1 增强，轴位 / 冠状位混合）
+  - elementId: preproc-heading
+    elementType: text
+    bounds: [60, 310, 540, 22]
+    content:
+      style: "$heading"
+      text: 预处理与数据增强
+  - elementId: preproc-body
+    elementType: text
+    bounds: [60, 342, 540, 112]
+    content:
+      style: "$body"
+      text: |
+        <p>· 统一缩放至 224 × 224，适配 ResNet 输入</p>
+        <p>· 训练增强：随机水平翻转、±10° 旋转、亮度/对比度抖动</p>
+        <p>· ImageNet 均值方差归一化，匹配预训练分布</p>
+        <p>· 训练集再划出 10% 作为验证集（固定随机种子 42）</p>
+  # 右：数据统计表
+  - elementId: data-table
+    elementType: table
+    bounds: [640, 118, 260, 220]
+    columnWidths: [0.4, 0.3, 0.3]
+    rowHeights: [0.17, 0.166, 0.166, 0.166, 0.166, 0.166]
+    style: "$default"
+    rows:
+      - - text: "类别"
+        - text: "训练"
+        - text: "测试"
+      - - text: "胶质瘤"
+        - text: "1400"
+        - text: "400"
+      - - text: "脑膜瘤"
+        - text: "1400"
+        - text: "400"
+      - - text: "无肿瘤"
+        - text: "1400"
+        - text: "400"
+      - - text: "垂体瘤"
+        - text: "1400"
+        - text: "400"
+      - - text: "合计"
+          bold: true
+        - text: "5600"
+          bold: true
+        - text: "1600"
+          bold: true
+  - elementId: table-caption
+    elementType: text
+    bounds: [640, 346, 260, 18]
+    content:
+      style: "$small"
+      text: 表 1　数据集类别分布（四类均衡）
+  - elementId: data-source
+    elementType: text
+    bounds: [640, 372, 260, 60]
+    content:
+      style: "$small"
+      text: |
+        <p>数据来源：<a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset">Kaggle — Brain Tumor MRI Dataset</a>（Nickparvar, 2021）</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "04"

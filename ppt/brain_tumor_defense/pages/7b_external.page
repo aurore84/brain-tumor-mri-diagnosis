@@ -1,0 +1,109 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "07"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 760, 30]
+    content:
+      style: "$pageTitle"
+      text: 外部验证：模型"换家医院"还行吗
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：外部验证混淆矩阵
+  - elementId: ext-img
+    elementType: image
+    bounds: [60, 104, 360, 320]
+    src: media/resnet18_external_confusion_matrix.png
+    fit: {mode: contain}
+  - elementId: ext-caption
+    elementType: text
+    bounds: [60, 430, 360, 32]
+    content:
+      style: "$small"
+      align: [center, top]
+      text: 图 5　外部验证混淆矩阵（独立整理来源数据集，3096 张，模型未做任何调整）
+  # 右：三模型内外对比表
+  - elementId: cmp-table
+    elementType: table
+    bounds: [470, 104, 430, 150]
+    columnWidths: [0.34, 0.22, 0.22, 0.22]
+    rowHeights: [0.25, 0.25, 0.25, 0.25]
+    style: "$default"
+    rows:
+      - - text: "模型"
+        - text: "参数量"
+        - text: "内部"
+        - text: "外部"
+      - - text: "ResNet18"
+          bold: true
+        - text: "11.2M"
+        - text: "93.0%"
+          bold: true
+        - text: "81.7%"
+          bold: true
+      - - text: "ResNet34"
+        - text: "21.3M"
+        - text: "91.8%"
+        - text: "79.4%"
+      - - text: "EfficientNet-B0"
+        - text: "5.3M"
+        - text: "84.0%"
+        - text: "76.9%"
+  - elementId: cmp-caption
+    elementType: text
+    bounds: [470, 260, 430, 16]
+    content:
+      style: "$small"
+      text: 表 3　三模型两阶段训练后的内部 / 外部准确率对比
+  # 右下：讨论
+  - elementId: ext-heading
+    elementType: text
+    bounds: [470, 292, 430, 22]
+    content:
+      style: "$heading"
+      text: 两个发现
+  - elementId: ext-1
+    elementType: text
+    bounds: [470, 322, 430, 76]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>① 领域偏移真实存在</strong></span>：内部 93.0% → 外部 81.7%（-11.3 pp），不同来源影像的灰度与对比度分布差异是主因——这正是医学 AI 落地的核心挑战。</p>
+  - elementId: ext-2
+    elementType: text
+    bounds: [470, 402, 430, 76]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>② 更深 ≠ 更好，且结论跨分布稳定</strong></span>：三个模型内外排名一致（ResNet18 最优）；小数据集上参数翻倍反而更易过拟合训练分布。</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "08"

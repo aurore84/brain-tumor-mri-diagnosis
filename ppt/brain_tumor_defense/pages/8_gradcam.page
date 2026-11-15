@@ -1,0 +1,92 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "10"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: Grad-CAM × 认知科学：模型"看"哪里
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 三张 Grad-CAM 图
+  - elementId: gc-1
+    elementType: image
+    bounds: [60, 100, 266, 133]
+    src: media/meningioma_Te-aug-me_1.png
+    fit: {mode: contain}
+  - elementId: gc-2
+    elementType: image
+    bounds: [347, 100, 266, 133]
+    src: media/pituitary_Te-pi_1.png
+    fit: {mode: contain}
+  - elementId: gc-3
+    elementType: image
+    bounds: [634, 100, 266, 133]
+    src: media/glioma_Te-gl_10.png
+    fit: {mode: contain}
+  - elementId: gc-cap
+    elementType: text
+    bounds: [60, 240, 840, 16]
+    content:
+      style: "$small"
+      align: [center, top]
+      text: 图 7　三个类别的 Grad-CAM 可视化：左为原始 MRI，右为模型注意力热力图（红 = 关注度高）
+  # 两个认知科学观察
+  - elementId: obs-1
+    elementType: text
+    bounds: [60, 278, 840, 76]
+    content:
+      style: "$body"
+      text: |
+        <p><span style="color:$accent"><strong>观察一：机器注意与人类注意对齐。</strong></span>三类样本的热区都落在肿瘤病灶及周围水肿带上，与放射科医生阅片时的注视模式一致——CNN 学到的判别特征在空间上与人类专家的选择性注意重合。</p>
+  - elementId: obs-line
+    elementType: shape
+    bounds: [60, 364, 840, 1]
+    shapeName: rect
+    fill: {type: solid, color: "#D8CFC0"}
+  - elementId: obs-2
+    elementType: text
+    bounds: [60, 378, 840, 76]
+    content:
+      style: "$body"
+      text: |
+        <p><span style="color:$accent"><strong>观察二：错误也是"认知性"的。</strong></span>被误判的胶质瘤样本，其热区仍正确落在病灶上——模型"看对了地方、下错了结论"，类似人类初学者能定位病灶却分不清亚型，提示瓶颈在特征鉴别而非注意定位。</p>
+  - elementId: obs-conclusion
+    elementType: text
+    bounds: [60, 462, 840, 22]
+    content:
+      fontSize: 14
+      color: "$primary"
+      fontFamily: MiSans
+      bold: true
+      text: 注意力可视化把"黑箱分类器"变成可与人比较的认知对象，这正是本课题与课程的核心连接。
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "11"

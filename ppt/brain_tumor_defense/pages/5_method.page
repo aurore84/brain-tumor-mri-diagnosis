@@ -1,0 +1,134 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "04"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: 方法：两阶段迁移学习
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：两阶段示意
+  - elementId: base-box
+    elementType: shape
+    bounds: [60, 112, 400, 76]
+    shapeName: rect
+    border: {style: solid, width: 1.5, color: "$primary"}
+  - elementId: base-text
+    elementType: text
+    bounds: [76, 120, 368, 60]
+    content:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.4
+      text: |
+        <p><strong>基座模型：ResNet18</strong>（ImageNet 预训练）</p>
+        <p>替换最后全连接层 → 4 类分类头</p>
+  - elementId: arrow-1
+    elementType: shape
+    bounds: [240, 194, 30, 26]
+    shapeName: downArrow
+    fill: {type: solid, color: "$accent"}
+  - elementId: s1-box
+    elementType: shape
+    bounds: [60, 226, 400, 88]
+    shapeName: rect
+    fill: {type: solid, color: "$pale"}
+    border: {style: solid, width: 1.5, color: "$primary"}
+  - elementId: s1-text
+    elementType: text
+    bounds: [76, 234, 368, 74]
+    content:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.4
+      text: |
+        <p><span style="color:$primary"><strong>阶段一：训练分类头</strong></span></p>
+        <p>冻结全部骨干参数，仅优化新分类头</p>
+        <p>lr = 1e-3 · 3 epochs → 验证集 85.0%</p>
+  - elementId: arrow-2
+    elementType: shape
+    bounds: [240, 320, 30, 26]
+    shapeName: downArrow
+    fill: {type: solid, color: "$accent"}
+  - elementId: s2-box
+    elementType: shape
+    bounds: [60, 352, 400, 88]
+    shapeName: rect
+    fill: {type: solid, color: "$pale"}
+    border: {style: solid, width: 1.5, color: "$primary"}
+  - elementId: s2-text
+    elementType: text
+    bounds: [76, 360, 368, 74]
+    content:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.4
+      text: |
+        <p><span style="color:$primary"><strong>阶段二：微调深层特征</strong></span></p>
+        <p>解冻最后一个残差块（layer4），小学习率微调</p>
+        <p>lr = 1e-4 · 3 epochs → 验证集 <strong>97.1%</strong></p>
+  # 右：设计理由
+  - elementId: why-heading
+    elementType: text
+    bounds: [520, 112, 380, 22]
+    content:
+      style: "$heading"
+      text: 为什么这样设计
+  - elementId: why-body
+    elementType: text
+    bounds: [520, 144, 380, 220]
+    content:
+      style: "$body"
+      text: |
+        <p><strong>① 预训练特征可迁移</strong>：ImageNet 学到的边缘、纹理检测器对医学影像同样有效，类似人类视觉经验的"迁移"。</p>
+        <p style="margin-top:8px"><strong>② 先头后身，防止遗忘</strong>：直接全量微调会在小数据集上破坏预训练特征（灾难性遗忘）；先固定骨干训头，再小步微调深层。</p>
+        <p style="margin-top:8px"><strong>③ 计算可行</strong>：两阶段策略让无 GPU 的普通笔记本也能完成训练（每 epoch 约 100–130 秒）。</p>
+  - elementId: impl-heading
+    elementType: text
+    bounds: [520, 380, 380, 22]
+    content:
+      style: "$heading"
+      text: 训练配置
+  - elementId: impl-body
+    elementType: text
+    bounds: [520, 412, 380, 70]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p>优化器 Adam · 交叉熵损失 · batch 64</p>
+        <p>框架 PyTorch / torchvision · 硬件 CPU</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "05"

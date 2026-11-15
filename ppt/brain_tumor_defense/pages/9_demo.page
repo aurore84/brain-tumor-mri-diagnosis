@@ -1,0 +1,94 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "11"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: 系统演示
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：Web 界面截图
+  - elementId: ui-img
+    elementType: image
+    bounds: [60, 104, 440, 275]
+    src: media/demo_ui.png
+    fit: {mode: cover}
+    crop: {bottom: 0.18}
+    border: {style: solid, width: 1, color: "#D8CFC0"}
+  - elementId: ui-caption
+    elementType: text
+    bounds: [60, 386, 440, 16]
+    content:
+      style: "$small"
+      align: [center, top]
+      text: 图 8　Web 演示界面（上传 MRI → 输出诊断概率与注意力图）
+  # 右：真实推理输出
+  - elementId: out-img
+    elementType: image
+    bounds: [528, 104, 372, 120]
+    src: media/demo_output.png
+    fit: {mode: contain}
+    border: {style: solid, width: 1, color: "#D8CFC0"}
+  - elementId: out-caption
+    elementType: text
+    bounds: [528, 230, 372, 16]
+    content:
+      style: "$small"
+      align: [center, top]
+      text: 图 9　一次真实推理：脑膜瘤，置信度 99.7%
+  - elementId: demo-flow-heading
+    elementType: text
+    bounds: [528, 266, 372, 22]
+    content:
+      style: "$heading"
+      text: 现场演示流程
+  - elementId: demo-flow
+    elementType: text
+    bounds: [528, 296, 372, 108]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p>① 运行 <span style="background-color:$pale">python app/app.py</span> 启动系统</p>
+        <p>② 浏览器中上传任意一张脑部 MRI</p>
+        <p>③ 实时输出四类概率 + Grad-CAM 热力图</p>
+        <p>④ CPU 单张推理约 1 秒，可现场互动</p>
+  - elementId: demo-note
+    elementType: text
+    bounds: [60, 420, 440, 60]
+    content:
+      style: "$body"
+      fontSize: 12
+      text: |
+        <p><strong>系统完整性</strong>：数据 → 训练 → 评估 → 可视化 → 部署五环全部打通，非单点脚本；界面内置四类示例图像，一键试跑。</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "12"

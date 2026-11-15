@@ -1,0 +1,82 @@
+pageType: cover
+background:
+  type: solid
+  color: "$bg"
+elements:
+  # 右侧苏木精紫色块（不对称布局）
+  - elementId: cover-swatch
+    elementType: shape
+    bounds: [600, 0, 360, 540]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: cover-img
+    elementType: image
+    bounds: [560, 150, 340, 170]
+    src: media/meningioma_Te-aug-me_1.png
+    fit: {mode: cover}
+    border: {style: solid, width: 2, color: "#F7F3E8"}
+  - elementId: cover-img-caption
+    elementType: text
+    bounds: [560, 330, 340, 34]
+    content:
+      fontSize: 11
+      color: "#F7F3E8"
+      fontFamily: MiSans
+      lineHeight: 1.35
+      text: |
+        <p>Grad-CAM 注意力可视化：模型的"注视"</p>
+        <p>与人眼一样聚焦在肿瘤病灶区域</p>
+  # 左侧标题区
+  - elementId: cover-kicker
+    elementType: text
+    bounds: [64, 96, 460, 22]
+    content:
+      fontSize: 13
+      color: "$muted"
+      fontFamily: MiSans
+      letterSpacing: 2
+      text: 认知科学课程大作业 · 2026 年秋
+  - elementId: cover-title
+    elementType: text
+    bounds: [60, 130, 520, 130]
+    content:
+      fontSize: 42
+      color: "$ink"
+      fontFamily: 思源宋体
+      bold: true
+      lineHeight: 1.3
+      text: |
+        <p>脑肿瘤 MRI 图像分类</p>
+        <p>辅助诊断系统</p>
+  - elementId: cover-sub
+    elementType: text
+    bounds: [64, 274, 500, 26]
+    content:
+      fontSize: 15
+      color: "$primary"
+      fontFamily: MiSans
+      text: —— 基于迁移学习与联想记忆机制的人机视觉认知对比研究
+  - elementId: cover-line
+    elementType: shape
+    bounds: [64, 330, 200, 2]
+    shapeName: rect
+    fill: {type: solid, color: "$accent"}
+  - elementId: cover-points
+    elementType: text
+    bounds: [64, 352, 500, 56]
+    content:
+      fontSize: 13
+      color: "$ink"
+      fontFamily: MiSans
+      lineHeight: 1.6
+      text: |
+        <p>测试集准确率 <span style="color:$primary"><strong>93.9%</strong></span>（1600 张）· 四分类：胶质瘤 / 脑膜瘤 / 垂体瘤 / 无肿瘤</p>
+        <p>两阶段迁移学习 + Hopfield 联想记忆 + Grad-CAM 视觉注意分析 + 可现场演示的 Web 系统</p>
+  - elementId: cover-meta
+    elementType: text
+    bounds: [64, 460, 500, 22]
+    content:
+      fontSize: 13
+      color: "$muted"
+      fontFamily: MiSans
+      text: 汇报人：XXX　　学号：XXXXXXXX　　2026 年 11 月

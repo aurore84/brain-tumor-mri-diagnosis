@@ -1,0 +1,84 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "09"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 760, 30]
+    content:
+      style: "$pageTitle"
+      text: 小样本学习：视觉经验让机器"举一反三"
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左：学习曲线图
+  - elementId: fewshot-img
+    elementType: image
+    bounds: [60, 100, 480, 308]
+    src: media/fewshot_curve.png
+    fit: {mode: contain}
+  - elementId: fewshot-caption
+    elementType: text
+    bounds: [60, 414, 480, 16]
+    content:
+      style: "$small"
+      align: [center, top]
+      text: 图 6　小样本学习曲线：三种视觉经验条件下的对照实验（每类 14~1400 张）
+  # 右：三个结论
+  - elementId: fs-heading
+    elementType: text
+    bounds: [580, 100, 320, 22]
+    content:
+      style: "$heading"
+      text: 三个发现
+  - elementId: fs-1
+    elementType: text
+    bounds: [580, 132, 320, 100]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>① "举一反三"来自经验</strong></span>：有任务视觉经验时，每类仅 14 张即达 92%——接近人类医生"数十例上手"的效率。</p>
+  - elementId: fs-2
+    elementType: text
+    bounds: [580, 240, 320, 108]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>② 经验贡献可分解</strong></span>：通用视觉经验（预训练）+17 pp，任务适应（微调）再 +17 pp；去掉全部经验（随机初始化）只剩 57%——恰如人类"多年视觉经验 + 医学院专科训练"。</p>
+  - elementId: fs-3
+    elementType: text
+    bounds: [580, 356, 320, 76]
+    content:
+      style: "$body"
+      fontSize: 12.5
+      text: |
+        <p><span style="color:$accent"><strong>③ 记忆头全程并驾齐驱</strong></span>：Hopfield 原型记忆在所有数据量级上与判别式头相差 ≤1 pp。</p>
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "10"

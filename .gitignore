@@ -1,0 +1,13 @@
+# 数据集（请按 README 说明自行下载）
+data/
+data_external/
+
+# 模型权重（体积过大，训练可复现）
+models/
+
+# 日志与缓存
+results/*.log
+__pycache__/
+*.pyc
+ppt/overview.jpg
+ppt/brain_tumor_defense_screenshot/

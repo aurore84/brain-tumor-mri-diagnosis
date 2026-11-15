@@ -1,0 +1,108 @@
+pageType: content
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: sec-num
+    elementType: text
+    bounds: [60, 32, 44, 30]
+    content:
+      fontSize: 22
+      color: "$accent"
+      fontFamily: 思源宋体
+      bold: true
+      text: "01"
+  - elementId: page-title
+    elementType: text
+    bounds: [112, 34, 700, 30]
+    content:
+      style: "$pageTitle"
+      text: 选题背景与课程相关度
+  - elementId: head-rule
+    elementType: shape
+    bounds: [60, 76, 840, 1.5]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  # 左栏：选题背景
+  - elementId: bg-heading
+    elementType: text
+    bounds: [60, 100, 400, 24]
+    content:
+      style: "$heading"
+      text: 为什么选这个题目
+  - elementId: bg-body
+    elementType: text
+    bounds: [60, 132, 400, 250]
+    content:
+      style: "$body"
+      text: |
+        <p><strong>医学影像诊断是典型的人类视觉认知任务。</strong>放射科医生在复杂影像中定位并鉴别病灶，依赖选择性注意与模式识别的协同——这正是认知科学的核心研究对象。</p>
+        <p style="margin-top:10px"><strong>用机器完成同一任务，就为"注意"与"识别"提供了可检验的计算模型。</strong>模型的注意机制是否与人相似、犯的错是否"像人"，本身就是认知科学问题。</p>
+        <p style="margin-top:10px"><strong>现实价值明确。</strong>脑肿瘤的早期分型直接影响治疗方案，MRI 是首选检查手段；AI 辅助筛查可缓解影像科医生的阅片负担。</p>
+  # 右栏：与课程的连接点
+  - elementId: rel-heading
+    elementType: text
+    bounds: [520, 100, 380, 24]
+    content:
+      style: "$heading"
+      text: 与认知科学的三个连接点
+  - elementId: rel-1
+    elementType: text
+    bounds: [520, 134, 380, 76]
+    content:
+      style: "$body"
+      text: |
+        <p><span style="color:$accent"><strong>① 视觉注意机制</strong></span></p>
+        <p style="margin-top:4px">用 Grad-CAM 把模型"注视"的脑区可视化，与人类选择性注意直接类比，可量化比较人机注意差异。</p>
+  - elementId: rel-line-1
+    elementType: shape
+    bounds: [520, 220, 380, 1]
+    shapeName: rect
+    fill: {type: solid, color: "#D8CFC0"}
+  - elementId: rel-2
+    elementType: text
+    bounds: [520, 234, 380, 76]
+    content:
+      style: "$body"
+      text: |
+        <p><span style="color:$accent"><strong>② 分层知觉加工</strong></span></p>
+        <p style="margin-top:4px">CNN 从边缘、纹理到语义的层级特征提取，对应视觉皮层 V1 → IT 的层级表征假说。</p>
+  - elementId: rel-line-2
+    elementType: shape
+    bounds: [520, 320, 380, 1]
+    shapeName: rect
+    fill: {type: solid, color: "#D8CFC0"}
+  - elementId: rel-3
+    elementType: text
+    bounds: [520, 334, 380, 76]
+    content:
+      style: "$body"
+      text: |
+        <p><span style="color:$accent"><strong>③ 认知计算建模</strong></span></p>
+        <p style="margin-top:4px">以计算模型模拟认知功能并检验其与人行为的异同，是计算认知科学的标准方法论。</p>
+  - elementId: rel-note
+    elementType: text
+    bounds: [520, 424, 380, 50]
+    content:
+      fontSize: 11
+      color: "$muted"
+      fontFamily: MiSans
+      lineHeight: 1.4
+      text: |
+        <p>本项目的定位：<strong>不止是一个分类器</strong>，而是一次"机器视觉注意"的小型认知实验。</p>
+  # 页脚
+  - elementId: footer-left
+    elementType: text
+    bounds: [60, 512, 400, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      text: 脑肿瘤 MRI 图像分类辅助诊断系统 · 认知科学大作业
+  - elementId: footer-page
+    elementType: text
+    bounds: [860, 512, 40, 14]
+    content:
+      style: "$small"
+      fontSize: 9
+      align: [right, top]
+      text: "02"

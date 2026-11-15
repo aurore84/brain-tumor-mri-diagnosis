@@ -1,0 +1,7 @@
+{
+  "mode": "train",
+  "epochs": 30,
+  "internal_acc": 0.9393749833106995,
+  "external_acc": 0.819767415523529,
+  "time_s": 166.7
+}
